@@ -1,0 +1,10 @@
+/* Override warna pagination Swiper */
+.swiper-pagination-bullet {
+  background: #e3a008 !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #e3a008 !important;
+  opacity: 1;
+}

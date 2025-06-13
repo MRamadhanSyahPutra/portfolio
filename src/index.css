@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "tailwindcss";
+@import "tailwind-scrollbar-hide/v4";
+
+body {
+  background-color: #111827;
+}
+.card-client-1 img {
+  filter: invert(62%) sepia(27%) saturate(400%) hue-rotate(60deg)
+    brightness(90%) contrast(85%);
+}
+.card-client-1 img:hover {
+  filter: invert(405%) sepia(27%) saturate(500%) hue-rotate(240deg)
+    brightness(90%) contrast(85%);
+}
+.card-client-2 img {
+  filter: invert(50%) sepia(27%) saturate(400%) hue-rotate(190deg)
+    brightness(90%) contrast(85%);
+}
+.card-client-2 img:hover {
+  filter: invert(10%) sepia(27%) saturate(400%) hue-rotate(10deg)
+    brightness(90%) contrast(85%);
+}
+.eye {
+  filter: invert(62%) sepia(27%) saturate(400%) hue-rotate(60deg)
+    brightness(90%) contrast(85%);
+}
