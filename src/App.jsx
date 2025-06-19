@@ -115,11 +115,11 @@ const PortfolioSite = () => {
           <p className='text-gray-300 leading-relaxed mb-4'>
             I am an active student majoring in Informatics Engineering at Batam
             State Polytechnic who has high enthusiasm in exploring various
-            fields, especially web development, programming, and web design. My
-            skills are effective communication, ability to collaborate in a
-            team, resilience in facing pressure, creativity, and good
-            coordination, strong problem solving and able to be creative in
-            finding solutions.
+            fields, especially web development, programming, web design,
+            photography, and videography. My skills are effective communication,
+            ability to collaborate in a team, resilient in facing pressure,
+            creativity, and good coordination, strong problem solving and able
+            to be creative in finding solutions.
           </p>
         </div>
 
@@ -412,6 +412,20 @@ const PortfolioSite = () => {
         title: "Web Rentals",
         subTitle: "Web development",
       },
+      photoPortfolio: {
+        href: "https://www.shutterstock.com/g/Madan01",
+        src: "img/portfolio-6.jpg",
+        alt: "portfolio-6",
+        title: "Shutter Stock.contribution",
+        subTitle: "Photography",
+      },
+      cameraGuide: {
+        href: "https://drive.google.com/file/d/1f9ecgjR-WGXd5kii-aVyuEP4jw0IMRhp/view?usp=drive_link",
+        src: "img/portfolio-7.jpg",
+        alt: "portfolio-7",
+        title: "Basic guide to digital cameras",
+        subTitle: "Videography",
+      },
     };
     return (
       <>
@@ -612,6 +626,136 @@ const PortfolioSite = () => {
     );
   };
 
+  const PhotoPortfolio = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }, []);
+    const cardData = {
+      fotoVidio: {
+        href: "https://www.shutterstock.com/g/Madan01",
+        src: "img/portfolio-6.jpg",
+        alt: "portfolio-6",
+        title: "Shutter Stock.contribution",
+        subTitle: "Photography",
+      },
+    };
+    return (
+      <>
+        <div>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+            {Object.values(cardData).map((item) => (
+              <div
+                className={`grid-cols-1 flex justify-center items-center mb-3 transform transition-all duration-200 ease-out ${
+                  isVisible ? "scale-y-100 opacity-100" : "scale-y-50 opacity-0"
+                }`}
+                key={item.alt}
+              >
+                <div className='flex flex-col'>
+                  <div className='relative group bg-gray-700 px-3 py-3 rounded-lg mb-2 overflow-hidden'>
+                    <a href={item.href}>
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className='w-70 h-45 object-cover rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-110'
+                      />
+                      <div className='absolute inset-3 bg-gray-900/0 group-hover:bg-gray-900/50 rounded-lg transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 group-hover:scale-110 flex items-center justify-center'>
+                        <div className='transform translate-y-4 group-hover:translate-y-0 scale-75 group-hover:scale-100 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100'>
+                          <img
+                            src='img/eye.png'
+                            alt='eye'
+                            className='p-4 bg-gray-800 backdrop-blur-sm rounded-lg border border-white/20 w-12 h-12'
+                          />
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div>
+                    <h2 className='text-white text-[16px] ml-1'>
+                      {item.title}
+                    </h2>
+                    <p className='text-gray-500 ml-2 text-[14px]'>
+                      {item.subTitle}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>
+    );
+  };
+
+  const VideoPortfolio = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }, []);
+    const cardData = {
+      cameraGuide: {
+        href: "https://drive.google.com/file/d/1f9ecgjR-WGXd5kii-aVyuEP4jw0IMRhp/view?usp=drive_link",
+        src: "img/portfolio-7.jpg",
+        alt: "portfolio-7",
+        title: "Basic guide to digital cameras",
+        subTitle: "Videography",
+      },
+    };
+    return (
+      <>
+        <div>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+            {Object.values(cardData).map((item) => (
+              <div
+                className={`grid-cols-1 flex justify-center items-center mb-3 transform transition-all duration-200 ease-out ${
+                  isVisible ? "scale-y-100 opacity-100" : "scale-y-50 opacity-0"
+                }`}
+                key={item.alt}
+              >
+                <div className='flex flex-col'>
+                  <div className='relative group bg-gray-700 px-3 py-3 rounded-lg mb-2 overflow-hidden'>
+                    <a href={item.href}>
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className='w-70 h-45 object-cover rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-110'
+                      />
+                      <div className='absolute inset-3 bg-gray-900/0 group-hover:bg-gray-900/50 rounded-lg transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 group-hover:scale-110 flex items-center justify-center'>
+                        <div className='transform translate-y-4 group-hover:translate-y-0 scale-75 group-hover:scale-100 transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100'>
+                          <img
+                            src='img/eye.png'
+                            alt='eye'
+                            className='p-4 bg-gray-800 backdrop-blur-sm rounded-lg border border-white/20 w-12 h-12'
+                          />
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div>
+                    <h2 className='text-white text-[16px] ml-1'>
+                      {item.title}
+                    </h2>
+                    <p className='text-gray-500 ml-2 text-[14px]'>
+                      {item.subTitle}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>
+    );
+  };
+
   const renderPortfolio = () => {
     switch (portfoActiveSection) {
       case "All":
@@ -620,6 +764,10 @@ const PortfolioSite = () => {
         return <WebPortfolio />;
       case "Applications":
         return <AppPortfolio />;
+      case "Photography":
+        return <PhotoPortfolio />;
+      case "Videography":
+        return <VideoPortfolio />;
       default:
         return <div className='text-white'>All</div>;
     }
@@ -634,8 +782,36 @@ const PortfolioSite = () => {
             <hr className='mt-6 border-yellow-500 border-3 rounded w-10 mb-5' />
           </div>
           <div>
-            <div className='flex space-x-8'>
-              {["All", "Web development", "Applications"].map((item) => (
+            <form className=''>
+              <select
+                id='countries'
+                value={portfoActiveSection}
+                onChange={(e) => portfoSetActiveSection(e.target.value)}
+                className=' md:hidden bg-gray-50 border border-blue-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+              >
+                {[
+                  "All",
+                  "Web development",
+                  "Applications",
+                  "Photography",
+                  "Videography",
+                ].map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </form>
+          </div>
+          <div>
+            <div className='hidden md:flex space-x-8'>
+              {[
+                "All",
+                "Web development",
+                "Applications",
+                "Photography",
+                "Videography",
+              ].map((item) => (
                 <button
                   key={item}
                   onClick={() => portfoSetActiveSection(item)}
@@ -1016,7 +1192,6 @@ const PortfolioSite = () => {
     e.preventDefault();
     setIsContact((prev) => !prev);
   };
-  console.log(showContact);
 
   return (
     <>
